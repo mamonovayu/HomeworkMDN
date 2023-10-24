@@ -12,88 +12,82 @@
     <title>Document</title>
   </head>
   <body class="body">
+    <div class="bunner container_grey">
+      <p>
+        Get real-time assistance with your coding queries. Try
+        <a href="">AI Help</a> now!
+      </p>
+    </div>
     <header class="header">
-      <!-- В принципе, тут всё правильно, но я бы падумал над тем, чтобы вынести баннер из шапки, поскольку он не совсем относится к ней, это что-то отдельное, которое не относится ни к одному из блоков-->
-      <div class="bunner header__bunner_top"> <!-- Вот тут можно обойтись без элемента, поскольку стили в нем, характерны для баннера вне зависимости от его расположения. То есть вне зависимости от того где у тебя баннер его контент будет выровнен по центру.
-      Элемент имееет смысл задавать, когда у тебя применяется какая-то внешняя геометрия к блоку (margin, width и тп) либо когда ты хочешь переопределить какие-то конкретные стили блока в кокретно месте. Например, у тебя у блока цвет красный всегда, но ты хочешь чтобы в одном конкретном месте был зеленый.
-      -->
-        <p>
-          Get real-time assistance with your coding queries. Try
-          <a href="">AI Help</a> now!
-        </p>
-      </div>
-
-      <nav class="header__menu"> <!--Это похоже на отдельный блок (например, link-list), нежели на элемент. Блок - независимы элемент, его суть в том, что ты можешь скопипастить его куда и он встанет без проблем. Тут же, если ты захочешь вставить такой список ссылок
-        в другое место (в футер например), сделать этого не получится, поскольку он напрямую привязан к header'у.
-        Если же он тут нужен только из-за стилей внутри, то норм вариантом было бы создать, класс row, например.
-        А при помощи модификаторов задавать ему способ выравнивания (row_centered - выравнен по центру, row_start-aligned - все элементы варвены по центру и тп)
-        -->
-        <ul class="header__menu header__menu_left">
+      <nav class="link-list">
+        <ul class="list link-list link-list_left">
           <li>
             <img src="/logo.png" alt="MDN logo" class="logo header__logo" />
           </li>
-          <li><a href="">References</a></li>
-          <li><a href="">Guides</a></li>
-          <li><a href="">Plus</a></li>
-          <li><a href="">Blog</a></li>
-          <li><a href="">Play</a></li>
-          <li><a href="">AI Help BETA</a></li>
+          <li><a class="link" href="">References</a></li>
+          <li><a class="link" href="">Guides</a></li>
+          <li><a class="link" href="">Plus</a></li>
+          <li><a class="link" href="">Blog</a></li>
+          <li><a class="link" href="">Play</a></li>
+          <li><a class="link" href="">AI Help BETA</a></li>
         </ul>
-        <ul class="header__menu header__menu_right">
-          <li><a href="">Theme</a></li>
+        <ul class="list link-list link-list_right">
+          <li><a class="link" href="">Theme</a></li>
           <li>
             <label for="site-search"></label>
             <input type="search" id="site-search" name="q" width="10px" />
-            <!--У button лучше всегда указывать тип type напрямую, поскольку по умолчанию ставится тип submit, что в свою очередь может иметь негативный эффект-->
-            <button>serch</button>
+            <button type="button">serch</button>
           </li>
-          <li><a href="">Log in</a></li>
+          <li><a class="link" href="">Log in</a></li>
           <li>
             <input class="button" type="button" value="Sign up for free" />
           </li>
         </ul>
       </nav>
 
-      <div class="bunner header__bunner">
-        <a href="">References>HTML</a>
-        <a href="">English (US)</a>
+      <div class="action-container container_grey">
+        <a class="link" href="">References>HTML</a>
+        <a class="link" href="">English (US)</a>
       </div>
     </header>
 
-
-    <div class="page">
-      <!--В местах с aside и модификаторами БЭМ применен правильно -->
+    <div class="page page__position">
       <aside class="aside aside_left">
-        <h4><a href="">HTML</a></h4>
-        <ul>
-          <h4>Tutorials</h4> <!-- Внутри ul, ol допускаются только теги li-->
-          <li><a href="">HTML basics</a></li>
-          <li><a href="">Introduction to HTML</a></li>
-          <li><a href="">Multimedia and embedding</a></li>
-          <li><a href="">HTML tables</a></li>
+        <h4><a class="link" href="">HTML</a></h4>
+        <h4>Tutorials</h4>
+        <ul class="list">
+          <li><a class="link" href="">HTML basics</a></li>
+          <li><a class="link" href="">Introduction to HTML</a></li>
+          <li><a class="link" href="">Multimedia and embedding</a></li>
+          <li><a class="link" href="">HTML tables</a></li>
         </ul>
-        <ul>
-          <h4>References</h4>
-          References
-          <li><a href="">HTML elements </a></li>
-          <li><a href="">Global attributes</a></li>
-          <li><a href="">Attributes</a></li>
+        <h4>References</h4>
+        <ul class="list">
+          <li><a class="link" href="">HTML elements </a></li>
+          <li><a class="link" href="">Global attributes</a></li>
+          <li><a class="link" href="">Attributes</a></li>
           <li>
-            <a href="">input types</a>
+            <a class="link" href="">input types</a>
           </li>
         </ul>
-        <ul>
-          <h4>Guides</h4>
-          <li><a href="">Content categories</a></li>
-          <li><a href="">Block-level elements</a></li>
-          <li><a href="">Inline elements</a></li>
-          <li><a href="">Quirks Mode and Standards Mode</a></li>
-          <li><a href="">Date and time formats used in HTML</a></li>
-          <li><a href="">Constraint validation</a></li>
-          <li><a href="">Microdata</a></li>
-          <li><a href="">Microformats</a></li>
-          <li><a href="">Viewport meta tag</a></li>
-          <li><a href="">Allowing cross-origin use of images and canvas</a></li>
+        <h4>Guides</h4>
+        <ul class="list">
+          <li><a class="link" href="">Content categories</a></li>
+          <li><a class="link" href="">Block-level elements</a></li>
+          <li><a class="link" href="">Inline elements</a></li>
+          <li><a class="link" href="">Quirks Mode and Standards Mode</a></li>
+          <li>
+            <a class="link" href="">Date and time formats used in HTML</a>
+          </li>
+          <li><a class="link" href="">Constraint validation</a></li>
+          <li><a class="link" href="">Microdata</a></li>
+          <li><a class="link" href="">Microformats</a></li>
+          <li><a class="link" href="">Viewport meta tag</a></li>
+          <li>
+            <a class="link" href=""
+              >Allowing cross-origin use of images and canvas</a
+            >
+          </li>
         </ul>
       </aside>
 
@@ -151,15 +145,78 @@
       </main>
 
       <aside class="aside aside_right">
-        <ul>
-          <h3>In this article</h3>
-          <li><a href="">Key resources</a></li>
-          <li><a href="">Beginner's tutorials</a></li>
-          <li><a href="">Advanced topics</a></li>
-          <li><a href="">Reference</a></li>
-          <li><a href="">Related topics</a></li>
+        <h3>In this article</h3>
+        <ul class="list">
+          <li><a class="link" href="">Key resources</a></li>
+          <li><a class="link" href="">Beginner's tutorials</a></li>
+          <li><a class="link" href="">Advanced topics</a></li>
+          <li><a class="link" href="">Reference</a></li>
+          <li><a class="link" href="">Related topics</a></li>
         </ul>
       </aside>
     </div>
+    <footer class="footer">
+      <div>
+        <h4><a class="link" href="">MDN</a></h4>
+        <ul class="list">
+          <li>Your blueprint for a better internet.</li>
+          <li>
+            <ul class="list social-icon">
+              <li>
+                <a class="link" href=""
+                  ><img class="icon" src="/twitter.svg" alt="Twitter icon"
+                /></a>
+              </li>
+              <li>
+                <a class="link" href=""
+                  ><img class="icon" src="/github.svg" alt="Github icon"
+                /></a>
+              </li>
+              <li>
+                <a class="link" href=""
+                  ><img
+                    class="icon"
+                    src="/WIFI_icon.svg"
+                    alt="Developer.mozilla icon"
+                /></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4>MDN</h4>
+        <ul class="list">
+          <li><a class="link" href="">About</a></li>
+          <li><a class="link" href="">Blog</a></li>
+          <li><a class="link" href="">Careers</a></li>
+          <li><a class="link" href="">Advertise with us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul class="list">
+          <li><a class="link" href="">Product help</a></li>
+          <li><a class="link" href="">Report an issue</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our communities</h4>
+        <ul class="list">
+          <li><a class="link" href="">MDN Community</a></li>
+          <li><a class="link" href="">MDN Forum</a></li>
+          <li><a class="link" href="">MDN Chat</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Developers</h4>
+        <ul class="list">
+          <li><a class="link" href="">Web Technologies</a></li>
+          <li><a class="link" href="">Learn Web Development</a></li>
+          <li><a class="link" href="">MDN Plus</a></li>
+          <li><a class="link" href="">Hacks Blog</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

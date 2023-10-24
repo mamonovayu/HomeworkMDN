@@ -4,16 +4,12 @@
   font-size: 28px;
 }
 
-/*
-  По БЭМу, в качестве селектором используют только классы. Если ты хочешь сбросить стили, то лучше создать класс (link, например) и юзать его везде где надо.
-  На практике, на такие моменты иногда закрывают глаза, конечно, но надо стремиться к идеалу)
-*/
-a {
+.link {
   color: aliceblue;
   text-decoration: none;
 }
 
-ul {
+.list {
   list-style: none;
   padding: 0;
 }
@@ -22,38 +18,38 @@ ul {
   width: 200px;
 }
 
-.header__bunner_top {
+.bunner {
   display: flex;
   justify-content: center;
 }
 
-.header__bunner {
+.action-container {
   display: flex;
   justify-content: space-between;
   padding-left: 4%;
   padding-right: 4%;
 }
 
-.bunner {
+.container_grey {
   border-style: solid;
   border-color: rgb(61, 71, 71);
   background-color: rgb(47, 56, 56);
 }
 
-.header__menu {
+.link-list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.header__menu_right {
+.link-list_right {
   margin-right: 4%;
   display: flex;
   justify-content: space-between;
   min-width: 400px;
 }
 
-.header__menu_left {
+.link-list_left {
   margin-left: 4%;
   display: flex;
   justify-content: space-between;
@@ -61,15 +57,12 @@ ul {
 }
 
 .page {
-/*
-БЭМ блоку нельзя задавать внешнюю геометрию, отступы, способ позиционирования и тп.
-Суть блока в том, что если его скопипастить в любое другое место, он встанет и не сломает вёрстку.
-В данном  же случае, если его вставить куда-нибудь он будет всегда будет отступ сверху, а это в свою очередь не везде нужно (в одном месте он встанет хорошо, а в другом нет) а следовательно, вёрстка сломается.
- Вместо этого, надо создать БЭМ элемент в том месте где у тебя этот класс находится размеры и уже ему задавать эти margin’ы, размеры и тп.*/
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+}
+
+.page__position {
   margin-top: 80px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 .aside {
@@ -78,22 +71,36 @@ ul {
 }
 
 .aside_left {
-  width: 23%;
+  margin-left: 100px;
   max-width: 300px;
 }
 
 .aside_right {
-  width: 23%;
   height: 300px;
-  padding-left: 50px;
+  margin-left: 100px;
+  padding-left: 30px;
   border-left: solid;
   border-color: rgb(61, 71, 71);
 }
 
 .main {
-  /* Для верстки контента очень хорошо подошли бы гриды. То что тут проценты является подвидом блочной верстки который уже устарел + это упростит добавление адаптивности.
-  Грубо говоря у тебя будет что-то вроде этого grid-template-columns: minmax(0,1fr) minmax(0,2fr) minmax(0,1fr); (два сайдбара по бокам и мейн контент который в два раза больше каждого из них)
-  */
-  width: 50%;
   min-width: 800px;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: minmax(260px, 2fr) repeat(4, minmax(0, 1fr));
+  padding: 30px;
+  background-color: rgb(47, 56, 56);
+}
+
+.social-icon {
+  display: flex;
+  justify-content: space-between;
+  max-width: 200px;
+  margin-top: 40px;
+}
+
+.icon {
+  width: 40px;
 }
