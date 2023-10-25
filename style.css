@@ -1,106 +1,116 @@
-.body {
-  background-color: rgb(33, 35, 36);
-  color: aliceblue;
-  font-size: 28px;
+:root {
+    --row-gap: 8px;
+}
+
+.wrapper {
+    background-color: rgb(33, 35, 36);
+    color: aliceblue;
+    font-size: 16px;
+}
+
+.wrapper__banner {
+    height: 54px;
 }
 
 .link {
-  color: aliceblue;
-  text-decoration: none;
+    color: aliceblue;
+    text-decoration: none;
 }
 
 .list {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
-.header__logo {
-  width: 200px;
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(133, 133, 133);
+    background-color: rgb(47, 56, 56);
 }
 
-.bunner {
-  display: flex;
-  justify-content: center;
+.container {
+    max-width: 1440px;
 }
 
-.action-container {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 4%;
-  padding-right: 4%;
+.header__container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
 
-.container_grey {
-  border-style: solid;
-  border-color: rgb(61, 71, 71);
-  background-color: rgb(47, 56, 56);
-}
-
-.link-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.link-list_right {
-  margin-right: 4%;
-  display: flex;
-  justify-content: space-between;
-  min-width: 400px;
-}
-
-.link-list_left {
-  margin-left: 4%;
-  display: flex;
-  justify-content: space-between;
-  min-width: 900px;
-}
-
-.page {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
-}
-
-.page__position {
-  margin-top: 80px;
+.page__container {
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
 }
 
 .aside {
-  display: flex;
-  flex-direction: column;
-}
-
-.aside_left {
-  margin-left: 100px;
-  max-width: 300px;
-}
-
-.aside_right {
-  height: 300px;
-  margin-left: 100px;
-  padding-left: 30px;
-  border-left: solid;
-  border-color: rgb(61, 71, 71);
-}
-
-.main {
-  min-width: 800px;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer {
-  display: grid;
-  grid-template-columns: minmax(260px, 2fr) repeat(4, minmax(0, 1fr));
-  padding: 30px;
-  background-color: rgb(47, 56, 56);
+    display: grid;
+    grid-template-columns: minmax(260px, 2fr) repeat(4, minmax(0, 1fr));
+    padding: 30px;
+    background-color: rgb(47, 56, 56);
 }
 
 .social-icon {
-  display: flex;
-  justify-content: space-between;
-  max-width: 200px;
-  margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 200px;
+    margin-top: 40px; /* Тут задается внешняя геометрия, такого быть не должно*/
 }
 
 .icon {
-  width: 40px;
+    width: 40px;
+}
+
+.row {
+    display: flex;
+    gap: var(--row-gap);
+}
+
+.row--vertical-aligned_center {
+    align-items: center;
+}
+
+.image {
+    width: 100%;  /* Тут задется внешняя геометрия которая "допустпима" поскольку мы указываем чтобы блок занимал всё допустимое место, в отличии от фиксированных размеров*/
+    height: 100%;
+}
+
+.header__logo {
+    width: 160px;
+    height: 100%;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs {
+    border-style: solid;
+    border-color: rgb(61, 71, 71);
+    background-color: rgb(47, 56, 56);
+}
+
+.breadcrumbs__container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-navigation__list {
+    border-left: 2px solid #696969;
+}
+
+.page-navigation__link {
+    padding: 0.5rem 1rem;
 }
