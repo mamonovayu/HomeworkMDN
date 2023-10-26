@@ -1,116 +1,130 @@
 :root {
-    --row-gap: 8px;
+  --row-gap: 8px;
+}
+
+html {
+  height: 100%;
 }
 
 .wrapper {
-    background-color: rgb(33, 35, 36);
-    color: aliceblue;
-    font-size: 16px;
+  background-color: rgb(33, 35, 36);
+  color: aliceblue;
+  font-size: 16px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex-grow: 1;
 }
 
 .wrapper__banner {
-    height: 54px;
+  height: 54px;
 }
 
 .link {
-    color: aliceblue;
-    text-decoration: none;
+  color: aliceblue;
+  text-decoration: none;
 }
 
 .list {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid rgb(133, 133, 133);
-    background-color: rgb(47, 56, 56);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(133, 133, 133);
+  background-color: rgb(47, 56, 56);
 }
 
 .container {
-    max-width: 1440px;
+  max-width: 1440px;
 }
 
 .header__container {
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .page__container {
-    margin: 0 auto;
-    width: 100%;
-    display: grid;
-    gap: 3rem;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
 }
 
 .aside {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
-    display: grid;
-    grid-template-columns: minmax(260px, 2fr) repeat(4, minmax(0, 1fr));
-    padding: 30px;
-    background-color: rgb(47, 56, 56);
+  display: grid;
+  grid-template-columns: minmax(260px, 2fr) repeat(4, minmax(0, 1fr));
+  padding: 30px;
+  background-color: rgb(47, 56, 56);
 }
 
 .social-icon {
-    display: flex;
-    justify-content: space-between;
-    max-width: 200px;
-    margin-top: 40px; /* Тут задается внешняя геометрия, такого быть не должно*/
+  display: flex;
+  justify-content: space-between;
+  max-width: 200px;
+}
+
+.social-icon__position {
+  margin-top: 40px;
 }
 
 .icon {
-    width: 40px;
+  width: 40px;
 }
 
 .row {
-    display: flex;
-    gap: var(--row-gap);
+  display: flex;
+  gap: var(--row-gap);
 }
 
 .row--vertical-aligned_center {
-    align-items: center;
+  align-items: center;
 }
 
 .image {
-    width: 100%;  /* Тут задется внешняя геометрия которая "допустпима" поскольку мы указываем чтобы блок занимал всё допустимое место, в отличии от фиксированных размеров*/
-    height: 100%;
+  width: 100%; /* Тут задется внешняя геометрия которая "допустпима" поскольку мы указываем чтобы блок занимал всё допустимое место, в отличии от фиксированных размеров*/
+  height: 100%;
 }
 
 .header__logo {
-    width: 160px;
-    height: 100%;
+  width: 160px;
+  height: 100%;
 }
 
 .header-links {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .breadcrumbs {
-    border-style: solid;
-    border-color: rgb(61, 71, 71);
-    background-color: rgb(47, 56, 56);
+  border-style: solid;
+  border-color: rgb(61, 71, 71);
+  background-color: rgb(47, 56, 56);
 }
 
 .breadcrumbs__container {
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .page-navigation__list {
-    border-left: 2px solid #696969;
+  border-left: 2px solid #696969;
 }
 
 .page-navigation__link {
-    padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
 }
