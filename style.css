@@ -15,12 +15,26 @@ html {
   flex-direction: column;
 }
 
-.page {
-  flex-grow: 1;
-}
-
 .wrapper__banner {
   height: 54px;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(133, 133, 133);
+  background-color: rgb(47, 56, 56);
+}
+
+@media (max-width: 769px) {
+  .banner {
+    display: none;
+  }
+}
+
+.page {
+  flex-grow: 1;
 }
 
 .link {
@@ -33,14 +47,6 @@ html {
   padding: 0;
 }
 
-.banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid rgb(133, 133, 133);
-  background-color: rgb(47, 56, 56);
-}
-
 .container {
   max-width: 1440px;
 }
@@ -49,6 +55,12 @@ html {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+}
+
+@media (max-width: 992px) {
+  .row-container {
+    display: none;
+  }
 }
 
 .page__container {
@@ -64,25 +76,28 @@ html {
   flex-direction: column;
 }
 
-.footer {
-  display: grid;
-  grid-template-columns: minmax(260px, 2fr) repeat(4, minmax(0, 1fr));
-  padding: 30px;
-  background-color: rgb(47, 56, 56);
+@media (max-width: 1200px) {
+  .page__container {
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
 }
 
-.social-icon {
-  display: flex;
-  justify-content: space-between;
-  max-width: 200px;
-}
-
-.social-icon__position {
-  margin-top: 40px;
-}
-
-.icon {
-  width: 40px;
+@media (max-width: 769px) {
+  .page__container {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .aside {
+    display: none;
+  }
+  .page-navigation {
+    display: none;
+  }
 }
 
 .row {
@@ -90,12 +105,18 @@ html {
   gap: var(--row-gap);
 }
 
+@media (max-width: 992px) {
+  .row {
+    display: none;
+  }
+}
+
 .row--vertical-aligned_center {
   align-items: center;
 }
 
 .image {
-  width: 100%; /* Тут задется внешняя геометрия которая "допустпима" поскольку мы указываем чтобы блок занимал всё допустимое место, в отличии от фиксированных размеров*/
+  width: 100%;
   height: 100%;
 }
 
@@ -127,4 +148,33 @@ html {
 
 .page-navigation__link {
   padding: 0.5rem 1rem;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: minmax(260px, 2fr) repeat(4, minmax(0, 1fr));
+  padding: 30px;
+  background-color: rgb(47, 56, 56);
+}
+
+@media (max-width: 769px) {
+  .footer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: minmax(260px, 2fr) repeat (2, minmax(0, 1fr));
+  }
+}
+
+.social-icon {
+  display: flex;
+  justify-content: space-between;
+  max-width: 200px;
+}
+
+.social-icon__position {
+  margin-top: 40px;
+}
+
+.icon {
+  width: 40px;
 }
